@@ -1,0 +1,16 @@
+.link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 500;
+  color: #021118;
+  font-size: 18px;
+
+
+}
+
+.activeLink {
+  cursor: default;
+  composes: link;
+  color: #e61e17;
+}
