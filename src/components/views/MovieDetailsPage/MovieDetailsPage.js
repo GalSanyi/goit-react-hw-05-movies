@@ -46,6 +46,7 @@ export default function MovieDetailsPage() {
           </div>
         </div>
       )}
+      <h2>Additional information</h2>
       <NavLink className={s.link} to="cast">
         Cast
       </NavLink>
