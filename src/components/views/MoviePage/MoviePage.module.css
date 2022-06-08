@@ -1,0 +1,31 @@
+.d1 {
+    background: #A3D0C3;
+}
+
+.d1  {
+    width: 400px;
+    height: 42px;
+    padding-left: 10px;
+    border: 2px solid #7BA7AB;
+    border-radius: 5px;
+    outline: none;
+    background: #F9F0DA;
+    color: #9E9C9C;
+}
+
+.d2  {
+  
+    background: #683B4D;
+        border: none;
+        height: 42px;
+        width: 42px;
+      
+        cursor: pointer;
+}
+
+.d2:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: #F9F0DA;
+}

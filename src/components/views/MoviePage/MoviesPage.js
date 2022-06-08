@@ -1,4 +1,5 @@
 import * as API from 'services/api';
+import s from './MoviePage.module.css';
 import { useState, useEffect } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
@@ -31,9 +32,8 @@ export default function MoviesPage() {
   return (
     <>
       <form onSubmit={handleSubmitForm}>
-        <button type="submit">Search</button>
-
         <input
+          className={s.d1}
           value={searchValue}
           onChange={handleSetQuery}
           name="query"
@@ -42,6 +42,9 @@ export default function MoviesPage() {
           autoFocus
           placeholder="Movie Search"
         />
+        <button className={s.d2} type="submit">
+          Search
+        </button>
       </form>
       <ToastContainer />
       {movies && (

@@ -1,6 +1,6 @@
 import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { NotFount } from './views/NotFount';
+// import { NotFount } from './views/NotFount';
 // import { Loader } from './views/Loader';
 // import { HomePage } from './views/HomePage/HomePage';
 // import { MoviesPage } from './views/MoviePage/MoviesPage';
@@ -8,6 +8,7 @@ import { NotFount } from './views/NotFount';
 // import { Cast } from './views/Casts';
 // import { Reviews } from './views/Reviews/Reviews';
 // import { AppBar } from './AppBar/AppBar';
+const NotFount = lazy(() => import('./views/NotFount'));
 const Loader = lazy(() => import('./views/Loader.js'));
 const AppBar = lazy(() => import('./AppBar/AppBar.js'));
 const Casts = lazy(() => import('./views/Casts/Casts.js'));
