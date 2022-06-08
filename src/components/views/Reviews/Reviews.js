@@ -14,7 +14,7 @@ export default function Reviews() {
         <ul>
           {reviews.map(review => (
             <li key={review.id}>
-              {review.content ? review.content : <h3>don't content</h3>}
+              {review.content ? review.content : <h3>No content</h3>}
             </li>
           ))}
         </ul>
