@@ -6,7 +6,7 @@
 }
 
 /* From uiverse.io by @Jedi-hongbin */
-button {
+.button {
     display: flex;
     height: 3em;
     width: 100px;
@@ -21,19 +21,19 @@ button {
     background: rgb(207, 228, 199);
 }
 
-button>svg {
+.button>svg {
     margin-right: 5px;
     margin-left: 5px;
     font-size: 20px;
     transition: all 0.4s ease-in;
 }
 
-button:hover>svg {
+.button:hover>svg {
     font-size: 1.2em;
     transform: translateX(-5px);
 }
 
-button:hover {
+.button:hover {
     box-shadow: 9px 9px 33px #928484, -9px -9px 33px #b41010;
     transform: translateY(-2px);
 }
