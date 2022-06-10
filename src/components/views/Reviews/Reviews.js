@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import * as API from 'services/api';
+
 export default function Reviews() {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
@@ -19,7 +20,7 @@ export default function Reviews() {
           ))}
         </ul>
       ) : (
-        <h3>Don't content</h3>
+        <h3>No content</h3>
       )}
     </div>
   );

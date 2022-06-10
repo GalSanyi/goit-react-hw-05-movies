@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
+
 export default function MoviesPage() {
   const [query, setQuery] = useState('');
   const [page, setPage] = useState('');
