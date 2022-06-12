@@ -8,7 +8,7 @@ export default function MovieDetailsPage() {
   const history = useNavigate();
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
-  const goBack = () => history(-1);
+  const goBack = () => history('/', { replace: true });
   useEffect(() => {
     API.fetchMovieDetails(movieId).then(setMovie);
   }, [movieId]);
