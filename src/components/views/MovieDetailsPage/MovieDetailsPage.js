@@ -1,14 +1,21 @@
-import { useParams, NavLink, Outlet, useNavigate } from 'react-router-dom';
+import {
+  useParams,
+  NavLink,
+  Outlet,
+  useNavigate,
+  useLocation,
+} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import s from './MovieDetailsPage.module.css';
 import * as API from 'services/api';
 const BASE_URL = 'https://image.tmdb.org/t/p/w500/';
 
 export default function MovieDetailsPage() {
-  const history = useNavigate();
+  const location = useLocation();
+  const navigate = useNavigate();
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
-  const goBack = () => history('/', { replace: true });
+  const goBack = () => navigate(location?.state?.from ?? '/');
   useEffect(() => {
     API.fetchMovieDetails(movieId).then(setMovie);
   }, [movieId]);

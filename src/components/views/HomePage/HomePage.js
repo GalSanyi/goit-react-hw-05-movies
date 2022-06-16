@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import * as API from 'services/api';
 export default function HomePage() {
+  const location = useLocation();
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     API.fetchPopularMovies()
@@ -18,7 +19,7 @@ export default function HomePage() {
         <ul>
           {movies.map(movie => (
             <li key={movie.id}>
-              <Link to={`/movies/${movie.id}`}>
+              <Link to={`/movies/${movie.id}`} state={{ from: location }}>
                 {movie.title || movie.name}
               </Link>
             </li>

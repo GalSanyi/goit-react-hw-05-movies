@@ -3,14 +3,14 @@ import s from './MoviePage.module.css';
 import { useState, useEffect } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function MoviesPage() {
   const [query, setQuery] = useState('');
   const [page, setPage] = useState('');
   const [searchValue, setSearchValue] = useState('');
   const [movies, setMovies] = useState([]);
-
+  const location = useLocation();
   useEffect(() => {
     if (!query) {
       return;
@@ -52,7 +52,7 @@ export default function MoviesPage() {
         <ul>
           {movies.map(movie => (
             <li key={movie.id}>
-              <Link to={`/movies/${movie.id}`}>
+              <Link to={`/movies/${movie.id}`} state={{ from: location }}>
                 {movie.title || movie.name}
               </Link>
             </li>
