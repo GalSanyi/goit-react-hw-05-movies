@@ -11,11 +11,11 @@ import * as API from 'services/api';
 const BASE_URL = 'https://image.tmdb.org/t/p/w500/';
 
 export default function MovieDetailsPage() {
-  const location = useLocation();
+  const { state } = useLocation();
   const navigate = useNavigate();
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
-  const goBack = () => navigate(location?.state?.from ?? '/');
+  const goBack = () => navigate(state?.from ?? '/');
   useEffect(() => {
     API.fetchMovieDetails(movieId).then(setMovie);
   }, [movieId]);
