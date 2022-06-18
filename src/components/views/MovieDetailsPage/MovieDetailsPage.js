@@ -16,6 +16,7 @@ export default function MovieDetailsPage() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const goBack = () => navigate(state?.from ?? '/');
+
   useEffect(() => {
     API.fetchMovieDetails(movieId).then(setMovie);
   }, [movieId]);
@@ -54,10 +55,10 @@ export default function MovieDetailsPage() {
         </div>
       )}
       <h2>Additional information</h2>
-      <NavLink className={s.link} to="cast">
+      <NavLink className={s.link} to="cast" state={{ from: state?.from }}>
         Cast
       </NavLink>
-      <NavLink className={s.link} to="reviews">
+      <NavLink className={s.link} to="reviews" state={{ from: state?.from }}>
         Reviews
       </NavLink>
       <Outlet />
